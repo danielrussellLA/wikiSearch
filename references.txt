@@ -1,0 +1,2 @@
+How to properly handle call to wikipedia api:
+http://stackoverflow.com/questions/23952045/wikipedia-api-cross-origin-requests

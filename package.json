@@ -1,0 +1,14 @@
+{
+  "name": "openmailchallenge",
+  "version": "1.0.0",
+  "description": "open mail coding challenge",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "daniel russell",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^2.2.4"
+  }
+}

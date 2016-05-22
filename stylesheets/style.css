@@ -1,0 +1,176 @@
+* {
+  font-family: 'Helvetica', sans-serif;
+}
+
+html body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.title {
+  margin-bottom: 10px;
+  margin-top: 0;
+  margin-left: 20px;
+  font-size: 5em;
+  font-weight: 400;
+  color: #607D8B;
+
+  opacity: 100%;
+  transition: opacity 0.4s;
+}
+
+.hidden {
+  margin-bottom: 10px;
+  margin-top: 0;
+  margin-left: 20px;
+  font-size: 5em;
+  padding-top: 175px;
+  font-weight: 400;
+  color: white;
+
+  opacity: 0;
+}
+
+.blue {
+  color: #03A9F4;
+  font-weight: 200;
+}
+
+.searchBar {
+  margin: 0 auto;
+  display: block;
+  font-weight: 200;
+  height: 45px;
+  width: 425px;
+  padding: 15px;
+  font-size: 1.5em;
+  color: #222;
+  border: 1px solid #607D8B;
+  position: absolute;
+
+  outline: 0px;
+  transition: outline 0.2s ease;
+}
+
+.searchBar:focus {
+  outline: 2px solid #03A9F4;
+  transition: outline 0.2s ease;
+}
+
+.moveUp {
+  margin: 0 auto;
+  display: block;
+  font-weight: 200;
+  height: 45px;
+  width: 425px;
+  padding: 15px;
+  font-size: 1.5em;
+  color: #222;
+  border: 1px solid #607D8B;
+  position: absolute;
+  top: 300;
+
+  outline: none;
+  top: 20;
+}
+
+.searchContainer {
+  position: absolute;
+  display: inline-block;
+  height: 200px;
+  width: 500px;
+  margin-left: 30%;
+
+  top: 200;
+  transition: top 0.2s;
+}
+
+.hideSearchContainer {
+  position: absolute;
+  display: inline-block;
+  height: 100px;
+  width: 500px;
+  margin-left: 30%;
+  top: 0;
+}
+
+.loading {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 300;
+  margin-left: 45%;
+
+  opacity: 100%;
+  transition: opacity .3s;
+}
+
+#searchResults {
+  width: 100%;
+  margin-left: 22%;
+  margin-top: 0;
+  position: absolute;
+  top: 100;
+}
+
+.results {
+  width: 600px;
+  height: 100%;
+  border-bottom: 1px solid darkgrey;
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+}
+
+.results, h2 {
+  font-weight: 200;
+  text-indent: 0;
+  margin: 0 0 10px 0;
+  color: #03A9F4;
+}
+
+.results, p {
+  margin: 0;
+  color: #607D8B;
+}
+
+
+/***** MEDIA QUERIES *******/
+@media (max-width: 2000px) {
+  .searchContainer{
+    margin-left: 32%;
+  }
+}
+
+@media (max-width: 800px) {
+  .searchContainer{
+    margin-left: 22%;
+  }
+}
+
+@media (max-width: 750px) {
+  .searchContainer{
+    margin-left: 18%;
+  }
+}
+
+@media (max-width: 700px) {
+  .searchContainer{
+    margin-left: 17%;
+  }
+}
+
+@media (max-width: 600px) {
+  .searchContainer{
+    margin-left: 8%;
+  }
+}
+
+@media (max-width: 500px) {
+  .searchContainer{
+    margin-left: 2%;
+  }
+}
+
+
+
