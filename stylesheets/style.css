@@ -1,5 +1,5 @@
 * {
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 html body {
@@ -13,11 +13,8 @@ html body {
   margin-top: 0;
   margin-left: 20px;
   font-size: 5em;
-  font-weight: 400;
+  font-weight: 200;
   color: #607D8B;
-
-  opacity: 100%;
-  transition: opacity 0.4s;
 }
 
 .hidden {
@@ -34,7 +31,7 @@ html body {
 
 .blue {
   color: #03A9F4;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .searchBar {
@@ -83,7 +80,7 @@ html body {
   margin-left: 30%;
 
   top: 200;
-  transition: top 0.2s;
+  transition: top 0.1s ease-out;
 }
 
 .hideSearchContainer {
@@ -123,52 +120,78 @@ html body {
 }
 
 .results, h2 {
-  font-weight: 200;
+  font-weight: 400;
   text-indent: 0;
   margin: 0 0 10px 0;
   color: #03A9F4;
 }
 
 .results, p {
+  font-weight: 300;
+  line-height: 25px;
   margin: 0;
   color: #607D8B;
+}
+
+.noResults {
+  /*text-align: center;*/
+  margin-left: 190px;
+  font-size: 2em;
 }
 
 
 /***** MEDIA QUERIES *******/
 @media (max-width: 2000px) {
-  .searchContainer{
+  .searchContainer, .hideSearchContainer{
     margin-left: 32%;
+  }
+  #searchResults {
+    margin-left: 26%
   }
 }
 
 @media (max-width: 800px) {
-  .searchContainer{
+  .searchContainer, .hideSearchContainer{
     margin-left: 22%;
+  }
+  #searchResults {
+    margin-left: 12%
   }
 }
 
 @media (max-width: 750px) {
-  .searchContainer{
+  .searchContainer, .hideSearchContainer{
     margin-left: 18%;
+  }
+  #searchResults {
+    margin-left: 9%
   }
 }
 
 @media (max-width: 700px) {
-  .searchContainer{
+  .searchContainer, .hideSearchContainer{
     margin-left: 17%;
+  }
+  #searchResults {
+    margin-left: 8%
   }
 }
 
 @media (max-width: 600px) {
-  .searchContainer{
-    margin-left: 8%;
+  .searchContainer, .hideSearchContainer{
+    margin-left: 12%;
+  }
+  #searchResults {
+    margin-left: 5%
   }
 }
 
 @media (max-width: 500px) {
-  .searchContainer{
-    margin-left: 2%;
+  .searchContainer, .hideSearchContainer{
+    margin-left: 4%;
+  }
+  #searchResults {
+    margin-left: 4%
   }
 }
 

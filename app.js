@@ -6,12 +6,12 @@ $(document).ready(function(){
   var body = document.getElementsByTagName('body');
   var loading = document.getElementById('loading');
 
-    console.log(input)
   /*********** Listeners *************************/
+
   input.oninput = function () {
     searchContainer.className = "hideSearchContainer";
     input.className = "moveUp";
-    // logo.className = "hidden";
+
     $('#logo').remove();
     loading.innerHTML = "<img src='./assets/loading.gif' class='loading'>";
     if(input.value === ''){
@@ -23,35 +23,24 @@ $(document).ready(function(){
     }
   }
 
-  // body[0].onclick = function () {
-  //   searchContainer.className = "searchContainer";
-  //   input.className = "searchBar";
-  //   logo.className = "title";
-  // }
-
   /************* Helpers *************************/
 
   function addDefaultStyle() {
     searchContainer.className = "searchContainer";
     input.className = "searchBar";
     logo.className = "title";
+    $("#logo").hide().fadeIn(600);
     loading.innerHTML = "";
   }
 
   function displaySearchResults (results) {
-
-    results.forEach(function(val, index){
-      setTimeout(
-        function(){
-          $("#searchResults").append("<div class='results'><h2>"+val.title+"</h2>"+"<p>"+val.snippet+"...</p></div>").hide().fadeIn(100, function(){console.log('should be fadin')});
-        }, 300*index);
-    });
-
+      results.forEach(function(val, index){
+        var result  = $("<div class='results'><h2>"+val.title+"</h2>"+"<p>"+val.snippet+" . . .</p></div>")
+        $("#searchResults").append(result.hide().fadeIn(300 + index * 300));
+      });
   }
 
   function Search(text) {
-    console.log(text);
-    if(text.trim() !== ''){
       $.ajax( {
         url: "https://en.wikipedia.org/w/api.php",
         jsonp: "callback",
@@ -69,14 +58,14 @@ $(document).ready(function(){
         success: function(response) {
           $(".results").remove();
           loading.innerHTML = "";
-          displaySearchResults(response.query.search)
-          console.log(response);
+          if(input.value !== ""){
+            displaySearchResults(response.query.search);
+          }
         },
         error: function(response) {
           console('error...error', response);
         }
       })
-    }
   }
 
 });
