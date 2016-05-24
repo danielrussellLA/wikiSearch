@@ -69,6 +69,8 @@ $(function(){
 
   $('#searchResults').on('click', 'div', function(){
     if(currentState === state.categories){
+      // loading.className = 'loading'
+      loading.innerHTML = "<img src='./assets/loading.gif' class='loading'>";
       app.searchForCategory(this.innerHTML);
       currentState = state.specificSubject;
     } else if (currentState === state.specificSubject){
@@ -77,11 +79,11 @@ $(function(){
   });
   /************* Helpers *************************/
 
-  app.redirectTo = function(html) {
-    $(html).on('click' ,function(){
-      console.log($('a')[0].click());
-    });
-  }
+  // app.redirectTo = function(html) {
+  //   $(html).on('click' ,function(){
+  //     console.log($('a')[0].click());
+  //   });
+  // }
 
   // adds default styles to all elements on the page
   app.addDefaultStyle = function() {
@@ -109,7 +111,7 @@ $(function(){
     // display all results and give them a delayed fade-in by index
     results.forEach(function(val, index){
       var link = JSON.stringify('https://en.wikipedia.org/wiki/' + val.title);
-      var result  = $("<div class='results' alt='"+val.title+"' aria='"+val.title+"'><a id='link' href="+link+">"+val.title+"</a><p>"+val.snippet+"</p></div>");
+      var result  = $("<div class='results' alt='"+val.title+"' aria='"+val.title+"'><a id='link' href="+link+">"+val.title+"</a><p>"+val.snippet+"...</p></div>");
       $("#searchResults").append(result.hide().fadeIn(300));
     });
     // center results & searchResults container
@@ -129,7 +131,7 @@ $(function(){
             action: "query",
             list: "allcategories",
             acprefix: text,
-            aclimit: 500,
+            aclimit: 100,
             format: "json"
         },
         xhrFields: { withCredentials: true },
@@ -179,7 +181,7 @@ $(function(){
         error: function(response) {
           console('Error in finding results', response);
         }
-      })
+      });
   }
 
 });
