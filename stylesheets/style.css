@@ -136,7 +136,9 @@ html body {
 .results a {
   font-weight: 400;
   text-indent: 0;
-  margin: 0 0 10px 0;
+  display: block;
+  margin-bottom: 5px;
+  /*padding-bottom: 10px;*/
   color: #03A9F4;
   text-decoration: none;
   font-size: 1.5em;
