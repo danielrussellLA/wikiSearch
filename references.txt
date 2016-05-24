@@ -1,2 +1,4 @@
 How to properly handle call to wikipedia api:
 http://stackoverflow.com/questions/23952045/wikipedia-api-cross-origin-requests
+How to search by category:
+https://www.mediawiki.org/wiki/API:Categorymembers

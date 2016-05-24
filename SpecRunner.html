@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Mocha Spec Runner</title>
+  <link rel="stylesheet" href="./node_modules/mocha/mocha.css">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+
+  <script src="./node_modules/jquery/dist/jquery.js"></script>
+  <script src="./node_modules/mocha/mocha.js"></script>
+  <script src="./node_modules/chai/chai.js"></script>
+  <script src="./node_modules/chai-jquery/chai-jquery.js"></script>
+  <script src="./node_modules/sinon/lib/sinon.js"></script>
+  <script>
+    mocha.setup('bdd');
+    var expect = chai.expect;
+    $(function() {
+      window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
+    });
+  </script>
+
+  <!-- Spec files -->
+  <script src="./spec/wikiSearchSpec.js"></script>
+
+  <!-- Source files -->
+  <script src="./app.js"></script>
+
+</head>
+<body>
+<div id="mocha"></div>
+<div id="testarea" style="display: none;">
+
+   <div
+      id="container"
+      class="searchContainer"
+  >
+    <div id="logoContainer">
+    <h1
+        id="logo"
+        class="title"
+        alt="WikiSearch"
+        aria="wikisearch"
+    >
+      wiki<span class="blue">Search</span>
+    </h1>
+    </div>
+
+      <input
+          id="input"
+          class="searchBar"
+          placeholder="search wikipedia"
+          type="text"
+          alt="search"
+          aria="search"
+      />
+
+  </div>
+
+  <div
+      id="searchResults"
+  >
+  </div>
+
+   <div
+      id="loading"
+    >
+   </div>
+
+</div>
+</body>
+</html>
