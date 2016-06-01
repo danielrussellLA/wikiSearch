@@ -7,7 +7,7 @@ $(function(){
     blankSearchBar: 1,
     categories: 2,
     specificSubject: 3
-  }
+  };
 
   var currentState = 2;
 
@@ -32,7 +32,7 @@ $(function(){
     } else {
       app.searchFor(input.value);
     }
-  }
+  };
 
   $('#form').submit(function(e){
     e.preventDefault();
@@ -41,30 +41,30 @@ $(function(){
     $('#logo').remove();
     currentState = state.blankSearchBar;
     app.searchFor(input.value);
-  })
+  });
 
   $.fn.center = function () {
     this.css("margin-left", ( $(window).width() - (this.width() - 75) ) / 2 + "px");
-  }
+  };
 
   // center search container on page load
-  $('.searchContainer').center()
+  $('.searchContainer').center();
 
    $.fn.resultsCenter = function () {
     this.css("margin-left", ( $(window).width() - (this.width() - 1) ) / 2 + "px");
-  }
+  };
 
   window.onresize = function(){
-    $('.searchContainer').center()
-    $('.hideSearchContainer').center()
-    $('#searchResults').resultsCenter()
+    $('.searchContainer').center();
+    $('.hideSearchContainer').center();
+    $('#searchResults').resultsCenter();
     if(window.innerWidth > 650){
-      $('.results').css("width", "600px")
+      $('.results').css("width", "600px");
     }
     if(window.innerWidth < 650){
-      $('.results').css("width", "380px")
+      $('.results').css("width", "380px");
     }
-  }
+  };
 
   $('#searchResults').on('click', '.results', function(){
     // bind current index to the index of 'this' to preserve which index you clicked
@@ -89,9 +89,7 @@ $(function(){
     logo.className = "title";
     $("#logo").hide().fadeIn(600);
     loading.innerHTML = "";
-  }
-
-
+  };
 
   app.searchFor = function(text) {
     $.ajax( {
@@ -118,7 +116,7 @@ $(function(){
         console('Error in finding results', response);
       }
     });
-  }
+  };
 
   app.searchForCategory = function(text) {
     var regex = /<\/?h2>+/;
@@ -151,14 +149,14 @@ $(function(){
         console('Error in finding results', response);
       }
     });
-  }
+  };
 
 
   app.displaySearchResults = function(results) {
     // display all results and give them a delayed fade-in by index
     results.forEach(function(val, index){
-      var result  = $("<div class='results' alt='"+val['*']+"' aria='"+val['*']+"'><h2>"+val['*']+"</h2>"+"</div>")
-      $("#searchResults").append(result.hide().fadeIn(300));
+      var result  = $("<div class='results' alt='"+val['*']+"' aria='"+val['*']+"'><h2>"+val['*']+"</h2>"+"</div>");
+      $("#searchResults").append(result.hide().fadeIn(300 + index));
     });
     // center results & searchResults container
     window.onresize();
@@ -166,22 +164,20 @@ $(function(){
     // give the last result a little margin-bottom so people can see it clearly
     $('.results:last').css('margin-bottom', '50px');
 
-  }
+  };
 
   app.displaySearchCategoryResults = function(results) {
     // display all results and give them a delayed fade-in by index
     results.forEach(function(val, index){
       var link = JSON.stringify('https://en.wikipedia.org/wiki/' + val.title);
       var result  = $("<div class='results' alt='"+val.title+"' aria='"+val.title+"'><a id='link' href="+link+">"+val.title+"</a><p>"+val.snippet+"...</p></div>");
-      $("#searchResults").append(result.hide().fadeIn(300));
+      $("#searchResults").append(result.hide().fadeIn(300 + index * 200));
     });
     // center results & searchResults container
     window.onresize();
     $('#searchResults').resultsCenter();
     // give the last result a little margin-bottom so people can see it clearly
     $('.results:last').css('margin-bottom', '50px');
-  }
+  };
 
 });
-
-
