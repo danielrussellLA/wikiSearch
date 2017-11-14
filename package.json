@@ -4,7 +4,6 @@
   "description": "open mail coding challenge",
   "main": "app.js",
   "scripts": {
-    "test": "mocha spec/wikiSearchSpec.js"
   },
   "author": "daniel russell",
   "license": "ISC",

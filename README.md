@@ -9,3 +9,4 @@ To view simply run these commands in your terminal: <br>
 3. ```cd wikiSearch``` <br> 
 4. ```npm i```<br>
 5. ```open index.html```
+6. running tests: ```open SpecRunner.html```
