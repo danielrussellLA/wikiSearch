@@ -122,7 +122,6 @@ $(function(){
     var regex = /<\/?h2>+/;
     var first = text.replace(regex, '');
     var second = first.replace(regex, '');
-    console.log(second);
     $.ajax( {
       url: "https://en.wikipedia.org/w/api.php",
       jsonp: "callback",
